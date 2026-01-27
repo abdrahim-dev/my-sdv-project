@@ -1,62 +1,79 @@
 import scipy.io
 import time
 import json
+import paho.mqtt.client as mqtt
+
+# Konfiguration
+MQTT_BROKER = "localhost"
+MQTT_PORT = 1883
+MQTT_TOPIC = "automotive/battery/telemetry"
+FILE_NAME = "input/B0005.mat"
 
 
 def load_battery_data(file_path):
-    """Lädt die MATLAB-Datei und extrahiert die Zyklen."""
     mat = scipy.io.loadmat(file_path)
-    # Wir graben uns durch die Ebenen, wie besprochen
     return mat["B0005"][0, 0]["cycle"][0]
 
 
-def stream_telemetry(data, delay=0.1):
-    """Simuliert den Datenstrom eines Entladezyklus."""
-    print(f"{'=' * 20} STARTING TELEMETRY STREAM {'=' * 20}")
+def run_simulator():
+    # 1. Daten laden
+    try:
+        data = load_battery_data(FILE_NAME)
+    except FileNotFoundError:
+        print(f"Datei {FILE_NAME} nicht gefunden!")
+        return
 
-    for cycle_idx, entry in enumerate(data):
-        # Wir streamen nur die Entlade-Zyklen (Discharge)
-        if entry["type"][0] == "discharge":
-            print(f"\n>>> Streaming Cycle #{cycle_idx} (Type: Discharge)")
+    # 2. MQTT Client aufsetzen
+    client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1, "Vehicle_Simulator_B0005")
 
-            # Zugriff auf die Zeitreihen-Arrays
-            # Wir nutzen .flatten(), um die NumPy-Struktur zu vereinfachen
-            v_array = entry["data"][0, 0]["Voltage_measured"][0]
-            i_array = entry["data"][0, 0]["Current_measured"][0]
-            t_array = entry["data"][0, 0]["Temperature_measured"][0]
-            time_array = entry["data"][0, 0]["Time"][0]
+    try:
+        client.connect(MQTT_BROKER, MQTT_PORT)
+        print(f"Verbunden mit Broker {MQTT_BROKER}")
+    except Exception as e:
+        print(f"Verbindung zum Broker fehlgeschlagen: {e}")
+        return
 
-            # Wir gehen jeden Messpunkt im Array durch
-            for i in range(len(v_array)):
-                # 1. DATEN VERPACKEN (Dictionary)
-                # Wir konvertieren zu float, da JSON keine NumPy-Typen mag
-                payload = {
-                    "cycle_id": cycle_idx,
-                    "step": i,
-                    "voltage": float(v_array[i]),
-                    "current": float(i_array[i]),
-                    "temp": float(t_array[i]),
-                    "timestamp": float(time_array[i]),
-                }
+    client.loop_start()
 
-                # 2. DATEN SERIALISIEREN (In String umwandeln)
-                json_payload = json.dumps(payload)
+    # 3. Streaming-Logik
+    try:
+        for cycle_idx, entry in enumerate(data):
+            if entry["type"][0] == "discharge":
+                # Daten-Extraktion
+                d = entry["data"][0, 0]
+                v_array = d["Voltage_measured"][0]
+                i_array = d["Current_measured"][0]
+                t_array = d["Temperature_measured"][0]
+                time_array = d["Time"][0]
 
-                # 3. DATEN SENDEN (Aktuell nur Print, später MQTT)
-                print(f"SENDING: {json_payload}")
+                print(f"\n--- Starte Zyklus {cycle_idx} ---")
 
-                # 4. TAKTRATE SIMULIEREN
-                time.sleep(delay)
+                for i in range(len(v_array)):
+                    # Paket schnüren
+                    payload = {
+                        "cycle_id": int(cycle_idx),
+                        "step": int(i),
+                        "voltage": float(v_array[i]),
+                        "current": float(i_array[i]),
+                        "temp": float(t_array[i]),
+                        "timestamp_s": float(time_array[i]),
+                    }
+
+                    # Senden
+                    json_data = json.dumps(payload)
+                    client.publish(MQTT_TOPIC, json_data)
+
+                    # Kleiner Print zur Kontrolle
+                    if i % 10 == 0:  # Nur jeder 10. Punkt, um Terminal nicht zu fluten
+                        print(f"Sende Punkt {i} für Zyklus {cycle_idx}...")
+
+                    time.sleep(0.1)  # 10 Hz Simulation
+    except KeyboardInterrupt:
+        print("\nSimulator gestoppt.")
+    finally:
+        client.loop_stop()
+        client.disconnect()
 
 
 if __name__ == "__main__":
-    # Pfad zu deiner heruntergeladenen Datei
-    FILE_NAME = "input/B0005.mat"
-
-    try:
-        battery_data = load_battery_data(FILE_NAME)
-        stream_telemetry(battery_data, delay=0.1)
-    except FileNotFoundError:
-        print(f"Fehler: Die Datei {FILE_NAME} wurde nicht gefunden!")
-    except Exception as e:
-        print(f"Ein Fehler ist aufgetreten: {e}")
+    run_simulator()
