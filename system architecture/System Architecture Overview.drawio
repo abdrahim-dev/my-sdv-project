@@ -1,0 +1,94 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.6 Chrome/140.0.7339.249 Electron/38.8.0 Safari/537.36" version="29.3.6">
+  <diagram name="Seite-1" id="NT8ZT7p3VdPcBw1rkG74">
+    <mxGraphModel dx="1027" dy="687" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-54" edge="1" parent="1" source="HDeMMOMl3YMH4wT25RpA-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" target="HDeMMOMl3YMH4wT25RpA-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=default;fillColor=none;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="440" width="1000" x="680" y="1855" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-53" edge="1" parent="1" source="HDeMMOMl3YMH4wT25RpA-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" target="HDeMMOMl3YMH4wT25RpA-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=none;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="440" width="1000" x="680" y="2415" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-49" edge="1" parent="1" source="HDeMMOMl3YMH4wT25RpA-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" target="HDeMMOMl3YMH4wT25RpA-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="440" width="1000" x="680" y="1295" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;rounded=0;strokeWidth=4;fontSize=30;fontStyle=1" value="AI-Based State of Health (SoH) Prediction System for HV Batteries" vertex="1">
+          <mxGeometry height="80" width="1000" x="680" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;rounded=0;strokeWidth=3;fontSize=24;fontStyle=1" value="&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;System Architecture Overview&lt;/span&gt;" vertex="1">
+          <mxGeometry height="40" width="410" x="680" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="O8JdavZPOgTVHQ6X9oWV-2" edge="1" parent="1" source="HDeMMOMl3YMH4wT25RpA-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HDeMMOMl3YMH4wT25RpA-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-30" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="Data Ingest:&amp;nbsp;&lt;i style=&quot;font-size: 14px;&quot;&gt;&lt;u&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;(cloud_listener.py)&lt;/font&gt;&lt;/u&gt;&lt;/i&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Receives ECU Data&lt;/li&gt;&lt;li&gt;Converts the Data into ML ready Features&amp;nbsp;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="220" x="760" y="1375" as="geometry" />
+        </mxCell>
+        <mxCell id="O8JdavZPOgTVHQ6X9oWV-1" edge="1" parent="1" source="HDeMMOMl3YMH4wT25RpA-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="HDeMMOMl3YMH4wT25RpA-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="Model Registry:&amp;nbsp;&lt;i style=&quot;font-size: 14px;&quot;&gt;&lt;u&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;(battery_model_rf.pkl)&lt;/font&gt;&lt;/u&gt;&lt;/i&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Stores all trained models, their versions, and metadata.&lt;/li&gt;&lt;li&gt;.pkl&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="220" x="1090" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="O8JdavZPOgTVHQ6X9oWV-4" edge="1" parent="1" source="HDeMMOMl3YMH4wT25RpA-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="HDeMMOMl3YMH4wT25RpA-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-33" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="ML Module:&amp;nbsp;&lt;i style=&quot;font-size: 14px;&quot;&gt;&lt;u&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;(train_model_rf.py)&lt;/font&gt;&lt;/u&gt;&lt;/i&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Random Forest&lt;/li&gt;&lt;li&gt;Predicts SoH&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="220" x="1090" y="1375" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-34" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="Alert Engine:&amp;nbsp;&lt;i style=&quot;font-size: 14px;&quot;&gt;&lt;u&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;(cloud_listener.py)&lt;/font&gt;&lt;/u&gt;&lt;/i&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;SoH Forecast&lt;/li&gt;&lt;li&gt;e.g. 80% SoH Warning&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="220" x="1420" y="1375" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;fontStyle=0" value="VEHICLE" vertex="1">
+          <mxGeometry height="30" width="60" x="1150" y="1865" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;fontStyle=0" value="BATTERY DATASET" vertex="1">
+          <mxGeometry height="30" width="200" x="1080" y="2425" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=default;fillColor=none;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="450" width="1000" x="680" y="725" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-38" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;rounded=0;strokeWidth=1;" value="Web Dashboard:&lt;br&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Visualizes SoH trends per battery&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;Forecasts of future degradation&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;Alerts (e.g., “Battery will reach 80% SoH in 20 cycles”)&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="840" x="760" y="885" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-52" edge="1" parent="1" source="HDeMMOMl3YMH4wT25RpA-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HDeMMOMl3YMH4wT25RpA-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=14;" value="ECU Simulator: &lt;i&gt;&lt;u&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;(battery_streamer.py)&lt;/font&gt;&lt;/u&gt;&lt;/i&gt;&lt;div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Voltage&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Current&lt;/li&gt;&lt;li&gt;Temperature&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="360" x="760" y="2010" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=14;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Preprocessing:&amp;nbsp;&lt;/span&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;u&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;(battery_streamer.py)&lt;/font&gt;&lt;/u&gt;&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Filtering&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Feature extract&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="360" x="1240" y="2010" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-39" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="BACKEND" vertex="1">
+          <mxGeometry height="30" width="120" x="1140" y="1305" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="VISUALIZATION LAYER" vertex="1">
+          <mxGeometry height="63.63636363636363" width="233.89830508474574" x="1083.0508474576272" y="715" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-55" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontStyle=2" value="&lt;div&gt;REST API / WebSocket&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(JSON: SoH, forecast, alerts)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="280" x="1190" y="1205" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-56" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontStyle=2" value="&lt;div&gt;MQTT Comunication&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="280" x="1190" y="1775" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-57" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontStyle=2" value="&lt;div&gt;Raw Charge / Discharge Data&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="280" x="1190" y="2325" as="geometry" />
+        </mxCell>
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-58" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=14;" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;NASA Battery Dataset: &lt;/span&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;background-color: transparent; text-align: center;&quot;&gt;&lt;i&gt;&lt;u&gt;input/B0005.mat)&lt;/u&gt;&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Voltage, Current, Temperature,&amp;nbsp;&lt;/span&gt;Capacity&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="840" x="760" y="2570" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
