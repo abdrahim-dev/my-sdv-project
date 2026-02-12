@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.6 Chrome/140.0.7339.249 Electron/38.8.0 Safari/537.36" version="29.3.6">
   <diagram name="Seite-1" id="NT8ZT7p3VdPcBw1rkG74">
-    <mxGraphModel dx="1502" dy="1005" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
+    <mxGraphModel dx="1084" dy="726" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -58,7 +58,7 @@
         <mxCell id="HDeMMOMl3YMH4wT25RpA-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=default;fillColor=none;strokeWidth=2;" value="" vertex="1">
           <mxGeometry height="450" width="1000" x="680" y="725" as="geometry" />
         </mxCell>
-        <mxCell id="HDeMMOMl3YMH4wT25RpA-38" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;rounded=0;strokeWidth=1;" value="Web Dashboard:&lt;br&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Visualizes SoH trends per battery&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;Forecasts of future degradation&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;Alerts (e.g., “Battery will reach 80% SoH in 20 cycles”)&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-38" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;rounded=0;strokeWidth=1;" value="Web Dashboard: &lt;i&gt;&lt;u&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;(dashboard.py)&lt;/font&gt;&lt;/u&gt;&lt;/i&gt;&lt;br&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Visualizes SoH trends per battery&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;Forecasts of future degradation&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;Alerts (e.g., “Battery will reach 80% SoH in 20 cycles”)&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="130" width="840" x="760" y="885" as="geometry" />
         </mxCell>
         <mxCell id="HDeMMOMl3YMH4wT25RpA-52" edge="1" parent="1" source="HDeMMOMl3YMH4wT25RpA-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HDeMMOMl3YMH4wT25RpA-9">

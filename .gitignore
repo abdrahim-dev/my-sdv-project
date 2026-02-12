@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Ignore a file in a folder
+system architecture/System Architecture Overview.drawio
+system architecture/.$System Architecture Overview.drawio.bkp
+
