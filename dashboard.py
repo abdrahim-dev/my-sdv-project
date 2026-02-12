@@ -112,7 +112,7 @@ if latest_data and "error" not in latest_data:
     if forecast and "remaining_cycles" in forecast:
         st.markdown("--- Predictive Maintenance Prognose ---")
 
-        # Eine schöne Info-Box
+        # Info box showing remaining cycles until 80% SoH and estimated end cycle, placed side by side for easy comparison.
         c1, c2 = st.columns(2)
         with c1:
             st.info(
