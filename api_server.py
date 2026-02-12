@@ -97,11 +97,11 @@ def get_rul_forecast():
     df = pd.read_sql_query("SELECT cycle_id, soh FROM health_history", conn)
     conn.close()
 
-    if len(df) < 5:  # Wir brauchen ein paar Datenpunkte für einen Trend
-        return {"error": "Nicht genügend Daten für eine Prognose"}
+    if len(df) < 5:  # need at least some data points to calculate a trend
+        return {"error": "not enough data for forecast"}
 
-    # Einfache lineare Regression: Wie viel SoH verlieren wir pro Zyklus?
-    # Wir vergleichen den ersten und den letzten Punkt
+    # linear regression: how much SoH degrades per cycle?
+    # compare first and last SoH to get an average degradation rate per cycle, then extrapolate to 80% SoH
     first_soh = df["soh"].iloc[0]
     last_soh = df["soh"].iloc[-1]
     total_cycles = df["cycle_id"].iloc[-1] - df["cycle_id"].iloc[0]
@@ -111,10 +111,14 @@ def get_rul_forecast():
 
     deg_rate = (first_soh - last_soh) / total_cycles
 
-    if deg_rate <= 0:  # Batterie wird laut Daten "besser" (Messrauschen)
-        return {"prediction": "Stabil", "remaining_cycles": "Unendlich"}
+    if deg_rate <= 0:  # battery is "improving" according to data (measurement noise)
+        return {
+            "prediction": "Stable",
+            "remaining_cycles": "Infinite",
+            "estimated_end_cycle": "N/A",
+        }
 
-    # Wie viele Zyklen bis 80%?
+    # how many cycles until we reach 80% SoH?
     remaining_soh = last_soh - 80
     rul_cycles = max(0, int(remaining_soh / deg_rate))
 

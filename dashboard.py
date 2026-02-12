@@ -116,19 +116,17 @@ if latest_data and "error" not in latest_data:
         c1, c2 = st.columns(2)
         with c1:
             st.info(
-                f"**Verbleibende Zyklen bis 80% SoH:** ca. {forecast['remaining_cycles']} Zyklen"
+                f"Remaining cycles until 80% SoH: approx. {forecast['remaining_cycles']} Cycles"
             )
         with c2:
-            st.info(
-                f"**Voraussichtliches Ende bei Zyklus:** {forecast['estimated_end_cycle']}"
-            )
+            st.info(f"Estimated End Cycle: approx. {forecast['estimated_end_cycle']}")
 
-        # Kleiner Fortschrittsbalken zum "Lebensende"
-        # Wenn wir bei 100% starten und bei 80% Schluss ist, sind 20% der Bereich.
+        # small progress bar to visually represent remaining battery life
+        # start at 100% and end at 80%, so we have a 20% range to represent. We can calculate the percentage of that range that has been used.
         progress = max(
             0, min(100, (latest_data["soh"] - 80) / 0.2)
-        )  # Normalisiert auf 0-100%
-        st.write("Lebensdauer-Budget:")
+        )  # normalize to 0-100% where 100% is 80% SoH and 0% is 100% SoH
+        st.write("Remaining battery life:")
         st.progress(progress / 100)
 
     # ============ CHARTS (Bottom Row) ============
