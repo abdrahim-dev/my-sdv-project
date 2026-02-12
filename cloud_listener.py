@@ -24,6 +24,7 @@ import json
 import pandas as pd
 import joblib
 import numpy as np
+import sqlite3
 
 # ============================================================================
 # Configuration
@@ -57,6 +58,30 @@ current_cycle_data = []
 
 # ID of the last processed cycle (used to detect cycle changes)
 last_cycle_id = None
+
+
+# ============================================================================
+# Databank Setup - SQLite
+# ============================================================================
+
+
+def init_battery_db():
+    conn = sqlite3.connect("data/databank/battery_data.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS health_history (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            cycle_id INTEGER,
+            soh REAL,
+            capacity REAL,
+            avg_resistance REAL,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    conn.commit()
+    return conn
+
 
 # ============================================================================
 # Alert System
@@ -155,11 +180,26 @@ def on_message(client, userdata, msg):
             soh_ai = (prediction / REFERENCE_CAPACITY) * 100
 
             # Display diagnosis results
-            print(f"\n--- 🔋 DIAGNOSIS COMPLETED FOR CYCLE {last_cycle_id} ---")
-            print(f"Estimated capacity: {prediction:.4f} Ah")
-            print(f"State of Health (SoH): {soh_ai:.2f} %")
-            print(f"Basic features: R = {avg_res:.4f} Ω, Duration = {duration:.0f} s")
-            print(f"----------------------------------------------------\n")
+            # print(f"\n--- 🔋 DIAGNOSIS COMPLETED FOR CYCLE {last_cycle_id} ---")
+            # print(f"Estimated capacity: {prediction:.4f} Ah")
+            # print(f"State of Health (SoH): {soh_ai:.2f} %")
+            # print(f"Basic features: R = {avg_res:.4f} Ω, Duration = {duration:.0f} s")
+            # print(f"----------------------------------------------------\n")
+
+            # --- Save Data in the SQLite-Databank ---
+            conn = sqlite3.connect("data/databank/battery_data.db")
+            cursor = conn.cursor()
+            cursor.execute(
+                """
+                INSERT INTO health_history (cycle_id, soh, capacity, avg_resistance)
+                VALUES (?, ?, ?, ?)
+            """,
+                (int(last_cycle_id), float(soh_ai), float(prediction), float(avg_res)),
+            )
+            conn.commit()
+            conn.close()
+
+            print(f"✅ Cycle {last_cycle_id} saved: SoH {soh_ai:.2f}%")
 
             # Send alert if SoH is critically low
             send_alert(soh_ai)
@@ -180,6 +220,9 @@ def on_message(client, userdata, msg):
 # ============================================================================
 
 if __name__ == "__main__":
+    # Initialize the SQLite database (creates table if it doesn't exist)
+    init_battery_db()
+
     # Initialize MQTT client
     client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1, "Digital_Twin_Backend")
 

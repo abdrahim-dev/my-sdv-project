@@ -12,4 +12,8 @@ dependencies = [
     "scikit-learn>=1.8.0",
     "joblib>=1.5.3",
     "paho-mqtt>=2.1.0",
+    "fastapi>=0.95.0",
+    "uvicorn[standard]>=0.22.0",
+    "streamlit>=1.40.0",
+    "requests>=2.32.0",
 ]

@@ -37,7 +37,7 @@
         <mxCell id="O8JdavZPOgTVHQ6X9oWV-1" edge="1" parent="1" source="HDeMMOMl3YMH4wT25RpA-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="HDeMMOMl3YMH4wT25RpA-33">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="HDeMMOMl3YMH4wT25RpA-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="Model Registry:&amp;nbsp;&lt;i style=&quot;font-size: 14px;&quot;&gt;&lt;u&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;(battery_model_rf.pkl)&lt;/font&gt;&lt;/u&gt;&lt;/i&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Stores the trained model&lt;/li&gt;&lt;li&gt;.pkl&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="HDeMMOMl3YMH4wT25RpA-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="Model Registry:&amp;nbsp;&lt;i style=&quot;font-size: 14px;&quot;&gt;&lt;u&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;(battery_model_rf.pkl)&lt;/font&gt;&lt;/u&gt;&lt;/i&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Stores all trained models, their versions, and metadata.&lt;/li&gt;&lt;li&gt;.pkl&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="130" width="220" x="1090" y="1560" as="geometry" />
         </mxCell>
         <mxCell id="O8JdavZPOgTVHQ6X9oWV-4" edge="1" parent="1" source="HDeMMOMl3YMH4wT25RpA-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="HDeMMOMl3YMH4wT25RpA-34">

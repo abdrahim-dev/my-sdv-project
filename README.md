@@ -62,3 +62,6 @@ The system follows a modern IoT layered architecture to ensure a clean separatio
 	•	Train model: python train_model_rf.py
 	•	Start backend: python cloud_listener.py
 	•	Start simulation: python battery_streamer.py
+    •	Start API Server
+    •	API-Endpoint: "http://127.0.0.1:8000"
+    •	Start Streamlit Dashboard: streamlit run dashboard.py  
